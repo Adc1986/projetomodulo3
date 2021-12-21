@@ -1,0 +1,44 @@
+﻿@model ProjetoMVC.Models.Promocao
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Promocao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PacotesCompletos" class="control-label"></label>
+                <input asp-for="PacotesCompletos" class="form-control" />
+                <span asp-validation-for="PacotesCompletos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PacotesIndividuais" class="control-label"></label>
+                <input asp-for="PacotesIndividuais" class="form-control" />
+                <span asp-validation-for="PacotesIndividuais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PromocaoVerao" class="control-label"></label>
+                <input asp-for="PromocaoVerao" class="form-control" />
+                <span asp-validation-for="PromocaoVerao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
